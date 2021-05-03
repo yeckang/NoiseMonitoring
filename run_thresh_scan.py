@@ -66,7 +66,7 @@ def make_threshold_file(dirName, rate) :
 if __name__ == '__main__' :
     import argparse
     current = time.localtime()
-    dirName = 'data/%d.%02d.%02d.%02d.%02d'%(current.tm_year, current.tm_mon, current.tm_mday, current.tm_hour, current.tm_min)
+    dirName = 'data/thresh_scan/%d.%02d.%02d.%02d.%02d'%(current.tm_year, current.tm_mon, current.tm_mday, current.tm_hour, current.tm_min)
     subprocess.call(['mkdir', '-p', dirName])
 
     parser = argparse.ArgumentParser(description='SBit Rate Scans as Function of THR_ARM_DAC value')

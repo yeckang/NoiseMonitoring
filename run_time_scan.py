@@ -60,7 +60,7 @@ def process_scan(dirName) :
 if __name__ == '__main__' :
     import argparse
     current = time.localtime()
-    dirName = 'data/%d.%02d.%02d.%02d.%02d'%(current.tm_year, current.tm_mon, current.tm_mday, current.tm_hour, current.tm_min)
+    dirName = 'data/time_scan/%d.%02d.%02d.%02d.%02d'%(current.tm_year, current.tm_mon, current.tm_mday, current.tm_hour, current.tm_min)
     subprocess.call(['mkdir', '-p', dirName])
     
     parser = argparse.ArgumentParser(description='SBit Rate Scans as function of time in fixed threshold value')
