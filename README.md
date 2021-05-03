@@ -2,7 +2,11 @@
 
 ## Set the threshold value
 ```
-python run_threshold_scan.py 0 -minThr 0 -maxThr 255 -step 1 -rate 10
+python run_threshold_scan.py <ohN in decimal>\
+                             -minThr 0\
+                             -maxThr 255\
+                             -step 1\
+                             -rate 10
 ```
 This script make a sbit rate scan as a function of THR\_ARM\_DAC value.
 
@@ -12,7 +16,11 @@ The result will be located in `data/thresh_scan/<Scan date>`.
 
 ## Run the monitoring script
 ```
-python run_time_scan.py 0 -time 1 -interval 10 -total 30 -thr <Scan date of run_thrshold_scan>
+python run_time_scan.py <ohN in decimal>\
+                        -time <time window in second>\
+                        -interval <time interval for next scan in second>\
+                        -total <total time to scan in minutes>\
+                        -thr <Scan date of run_thrshold_scan>
 ```
 This script make a sbit rate scan as a function of time.
 
