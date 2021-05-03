@@ -18,7 +18,7 @@ def run_time_scan(args, dirName, threshold) :
     
     cmd = 'bash -c -l "python -u - %s"'%arg
     
-    host = 'lxplus'
+    host = 'gempro@gem-shelf01-amc02'
     log = file('%s/sbit_time_scan.log'%(dirName), 'w')
     err = file('%s/sbit_time_scan.err'%(dirName), 'w')
     infile = file(script, 'r')
@@ -63,7 +63,7 @@ if __name__ == '__main__' :
     dirName = 'data/%d.%02d.%02d.%02d.%02d'%(current.tm_year, current.tm_mon, current.tm_mday, current.tm_hour, current.tm_min)
     subprocess.call(['mkdir', '-p', dirName])
     
-    parser = argparse.ArgumentParser(description='SBit Rate Scans as Function of THR_ARM_DAC value')
+    parser = argparse.ArgumentParser(description='SBit Rate Scans as function of time in fixed threshold value')
     parser.add_argument('nOH', type=int, default = 0, help='number of OH to scan')
     parser.add_argument('--timeWindow', '-time', type=int, help='Time window for SBit counting(seconds)')
     parser.add_argument('--interval', '-interval', type=int, default = 10, help='Time interval for next data taking (second)')
@@ -71,7 +71,7 @@ if __name__ == '__main__' :
     parser.add_argument('--thresholds', '-thr', default = None, help='Date for threshold setup')
     args = parser.parse_args()
 
-    read_threshold_file(dirName)
+    read_threshold_file(args.thresholds)
     run_time_scan(args, dirName)
     process_scan(dirName)
     exit()

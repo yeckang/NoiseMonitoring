@@ -8,7 +8,7 @@ def run_threshold_scan(args, dirName) :
     
     cmd = 'bash -c -l "python -u - %s"'%arg
     
-    host = 'lxplus'
+    host = 'gempro@gem-shelf01-amc02'
     log = file('%s/sbit_threshold_scan.log'%(dirName), 'w')
     err = file('%s/sbit_threshold_scan.err'%(dirName), 'w')
     infile = file(script, 'r')
